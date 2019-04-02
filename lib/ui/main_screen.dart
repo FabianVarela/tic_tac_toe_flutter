@@ -44,10 +44,10 @@ class _MainScreenState extends State<MainScreen> {
         title: Text(widget.title),
       ),
       body: Padding(
-        padding: EdgeInsets.all(10),
         child: Builder(
           builder: (BuildContext context) {
             _context = context;
+
             return Center(
               child: Stack(
                 children: <Widget>[
@@ -59,6 +59,7 @@ class _MainScreenState extends State<MainScreen> {
             );
           },
         ),
+        padding: EdgeInsets.all(10),
       ),
     );
   }
@@ -71,18 +72,18 @@ class _MainScreenState extends State<MainScreen> {
       child: Stack(
         children: <Widget>[
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               buildHorizontalLine,
               buildHorizontalLine,
             ],
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               buildVerticalLine,
               buildVerticalLine,
             ],
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           ),
         ],
       ),
@@ -91,17 +92,17 @@ class _MainScreenState extends State<MainScreen> {
 
   Container get buildVerticalLine {
     return Container(
-      margin: EdgeInsets.only(top: 16, bottom: 16),
       color: Colors.grey,
+      margin: EdgeInsets.only(top: 16, bottom: 16),
       width: 5,
     );
   }
 
   Container get buildHorizontalLine {
     return Container(
-      margin: EdgeInsets.only(top: 16, bottom: 16),
       color: Colors.grey,
       height: 5,
+      margin: EdgeInsets.only(top: 16, bottom: 16),
     );
   }
 
@@ -111,39 +112,39 @@ class _MainScreenState extends State<MainScreen> {
     return AspectRatio(
       aspectRatio: 1,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 buildCell(0, 0),
                 buildCell(0, 1),
                 buildCell(0, 2),
               ],
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             ),
           ),
           Expanded(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 buildCell(1, 0),
                 buildCell(1, 1),
                 buildCell(1, 2),
               ],
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             ),
           ),
           Expanded(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 buildCell(2, 0),
                 buildCell(2, 1),
                 buildCell(2, 2),
               ],
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             ),
           ),
         ],
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       ),
     );
   }
@@ -155,11 +156,11 @@ class _MainScreenState extends State<MainScreen> {
           child: Text(
             field[row][column],
             style: TextStyle(
-              fontSize: 82,
               color: field[row][column].isNotEmpty &&
                       field[row][column] == playerChar
                   ? playerColor
                   : aiColor,
+              fontSize: 82,
             ),
           ),
           onPressed: () {
